@@ -5,7 +5,7 @@ Reproduce potential deadlock scenario of ws receiver
 # Before Flashing
 Edit main.rs CONFIG with wifi_ssid + wifi_psk
 
-Edit IP address of ws connection in oython scripts double_send_deadlock.py & double_send_working.py to ip of esp
+Edit IP address of ws connection inside python scripts double_send_deadlock.py & double_send_working.py to ip of esp
 
 # To Test:
 
