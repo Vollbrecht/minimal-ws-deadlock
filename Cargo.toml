@@ -1,0 +1,43 @@
+[package]
+name = "support-container"
+version = "0.1.0"
+authors = ["Frederick <frederick@vollbrecht.cc>"]
+edition = "2021"
+resolver = "2"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true    # Symbols are nice and they don't increase the size on Flash
+opt-level = "z"
+
+[features]
+
+[dependencies]
+esp-idf-sys = { version = "0.31.11", features = ["binstart"] }
+esp-idf-svc = { version = "0.43.4", features = [
+    "nightly",
+    "experimental",
+    "embassy-time-driver",
+    "embassy-time-isr-queue",
+    "alloc",
+] }
+esp-idf-hal = { version = "0.39.3", features = [
+    "edge-executor",
+    "embassy-sync",
+] }
+embedded-svc = { version = "0.23.1", features = ["nightly", "experimental"] }
+
+embassy-sync = { version = "0.1", features = ["std"] }
+embassy-futures = { version = "0.1" }
+
+heapless = "0.7.12"
+log ={ version = "0.4"}
+
+serde = "1.0"
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+
+[build-dependencies]
+embuild = "0.30.4"
+anyhow = "1"
