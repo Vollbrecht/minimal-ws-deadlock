@@ -10,4 +10,4 @@ Edit IP address of ws connection in oython scripts double_send_deadlock.py & dou
 # To Test:
 
 python3 double_send_working.py
-python3 doube_send_deadlock.oy
+python3 double_send_deadlock.py
